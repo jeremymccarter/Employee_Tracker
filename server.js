@@ -23,6 +23,8 @@ const db = mysql.createConnection(
 
 db.connect(function (err) {
     if (err) throw err;
+    console.log("connected to db")
+    //trackEmployees()
 })
 
 // Arry of choices for our application. 
@@ -41,6 +43,7 @@ function trackEmployees() {
     inquirer
         .prompt(mainMenu)
         .then(function (user) {
+           // console.log(user)
             switch (user.mainMenu) {
                 case "View All Employees":
                     viewAllEmployees();
